@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C82AEE09AEE0920294E0C72BCADDF96ADE063DC3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EFA42CD5909DC78DDB57A2D6FE2D5442113B7234" : 0,
+    "C82AEE09AEE0920294E0C72BCADDF96ADE063DC3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6132E84C-9372-48B8-9312-9AD40540F725",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EFA42CD5909DC78DDB57A2D6FE2D5442113B7234" : "OneColor_IOS\/",
+    "C82AEE09AEE0920294E0C72BCADDF96ADE063DC3" : "OneColor_IOS_V2\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OneColor",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OneColor\/OneColor.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TrianglePage\/OneColor_IOS_V2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C82AEE09AEE0920294E0C72BCADDF96ADE063DC3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TrianglePage\/OneColor_IOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EFA42CD5909DC78DDB57A2D6FE2D5442113B7234"
+    }
+  ]
+}

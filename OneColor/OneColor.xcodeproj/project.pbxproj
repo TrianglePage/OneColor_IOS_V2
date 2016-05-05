@@ -31,6 +31,12 @@
 		F96970691CDB2B50002DB829 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = F96970661CDB2B50002DB829 /* undo.png */; };
 		F969706B1CDB2B5D002DB829 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = F969706A1CDB2B5D002DB829 /* cancel.png */; };
 		F969706D1CDB2B69002DB829 /* GreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F969706C1CDB2B69002DB829 /* GreenBackground.png */; };
+		F969709A1CDB3866002DB829 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96970991CDB3866002DB829 /* opencv2.framework */; };
+		F96970A01CDB38EA002DB829 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = F969709D1CDB38EA002DB829 /* ASValuePopUpView.m */; };
+		F96970A11CDB38EA002DB829 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = F969709F1CDB38EA002DB829 /* ASValueTrackingSlider.m */; };
+		F96970AD1CDB3A81002DB829 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96970AC1CDB3A81002DB829 /* PopoverViewController.m */; };
+		F96970B21CDB3A97002DB829 /* ChooseButtonsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F96970AF1CDB3A97002DB829 /* ChooseButtonsPanel.m */; };
+		F96970B31CDB3A97002DB829 /* FunctionTableBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F96970B11CDB3A97002DB829 /* FunctionTableBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +68,17 @@
 		F96970661CDB2B50002DB829 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
 		F969706A1CDB2B5D002DB829 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		F969706C1CDB2B69002DB829 /* GreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBackground.png; sourceTree = "<group>"; };
+		F96970991CDB3866002DB829 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		F969709C1CDB38EA002DB829 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASValuePopUpView.h; path = ASValueTrackingSlider/ASValuePopUpView.h; sourceTree = "<group>"; };
+		F969709D1CDB38EA002DB829 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASValuePopUpView.m; path = ASValueTrackingSlider/ASValuePopUpView.m; sourceTree = "<group>"; };
+		F969709E1CDB38EA002DB829 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASValueTrackingSlider.h; path = ASValueTrackingSlider/ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		F969709F1CDB38EA002DB829 /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASValueTrackingSlider.m; path = ASValueTrackingSlider/ASValueTrackingSlider.m; sourceTree = "<group>"; };
+		F96970AB1CDB3A81002DB829 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		F96970AC1CDB3A81002DB829 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
+		F96970AE1CDB3A97002DB829 /* ChooseButtonsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseButtonsPanel.h; sourceTree = "<group>"; };
+		F96970AF1CDB3A97002DB829 /* ChooseButtonsPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseButtonsPanel.m; sourceTree = "<group>"; };
+		F96970B01CDB3A97002DB829 /* FunctionTableBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionTableBar.h; sourceTree = "<group>"; };
+		F96970B11CDB3A97002DB829 /* FunctionTableBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionTableBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F969709A1CDB3866002DB829 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +96,8 @@
 		F96970271CDB1FDE002DB829 = {
 			isa = PBXGroup;
 			children = (
+				F969709B1CDB38B3002DB829 /* ASValueTrackingSlider */,
+				F96970991CDB3866002DB829 /* opencv2.framework */,
 				F96970321CDB1FDE002DB829 /* OneColor */,
 				F96970311CDB1FDE002DB829 /* Products */,
 			);
@@ -94,6 +114,12 @@
 		F96970321CDB1FDE002DB829 /* OneColor */ = {
 			isa = PBXGroup;
 			children = (
+				F96970AE1CDB3A97002DB829 /* ChooseButtonsPanel.h */,
+				F96970AF1CDB3A97002DB829 /* ChooseButtonsPanel.m */,
+				F96970B01CDB3A97002DB829 /* FunctionTableBar.h */,
+				F96970B11CDB3A97002DB829 /* FunctionTableBar.m */,
+				F96970AB1CDB3A81002DB829 /* PopoverViewController.h */,
+				F96970AC1CDB3A81002DB829 /* PopoverViewController.m */,
 				F96970361CDB1FDE002DB829 /* AppDelegate.h */,
 				F96970371CDB1FDE002DB829 /* AppDelegate.m */,
 				F96970391CDB1FDE002DB829 /* ViewController.h */,
@@ -131,6 +157,17 @@
 				F96970341CDB1FDE002DB829 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F969709B1CDB38B3002DB829 /* ASValueTrackingSlider */ = {
+			isa = PBXGroup;
+			children = (
+				F969709C1CDB38EA002DB829 /* ASValuePopUpView.h */,
+				F969709D1CDB38EA002DB829 /* ASValuePopUpView.m */,
+				F969709E1CDB38EA002DB829 /* ASValueTrackingSlider.h */,
+				F969709F1CDB38EA002DB829 /* ASValueTrackingSlider.m */,
+			);
+			name = ASValueTrackingSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96970B31CDB3A97002DB829 /* FunctionTableBar.m in Sources */,
+				F96970AD1CDB3A81002DB829 /* PopoverViewController.m in Sources */,
 				F969703B1CDB1FDE002DB829 /* ViewController.mm in Sources */,
+				F96970A01CDB38EA002DB829 /* ASValuePopUpView.m in Sources */,
+				F96970A11CDB38EA002DB829 /* ASValueTrackingSlider.m in Sources */,
+				F96970B21CDB3A97002DB829 /* ChooseButtonsPanel.m in Sources */,
 				F96970381CDB1FDE002DB829 /* AppDelegate.m in Sources */,
 				F96970351CDB1FDE002DB829 /* main.m in Sources */,
 			);
@@ -337,6 +379,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneColor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hwp;
@@ -348,6 +394,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneColor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hwp;

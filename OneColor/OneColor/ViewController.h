@@ -7,9 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+//自定义滑杆
+#import "ASValueTrackingSlider.h"
+#import "PopoverViewController.h"
+#import "FunctionTableBar.h"
+#import "ChooseButtonsPanel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIAlertViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ASValueTrackingSliderDataSource,UIPopoverPresentationControllerDelegate,UITableViewDelegate>
+{
+    UIImage *image;
+}
+@property (strong, nonatomic) IBOutlet UIImageView *imageView_loadImage;
 
+@property (strong, nonatomic) IBOutlet UITabBarController *function_TabBar;
+
+@property (weak, nonatomic) IBOutlet UILabel *grading_tip;
+
+@property (weak, nonatomic) IBOutlet ASValueTrackingSlider  *slider_grading;
+
+@property (strong, nonatomic) PopoverViewController *buttonPopVC;
+@property (strong, nonatomic) PopoverViewController *itemPopVC;
+
+@property (strong, nonatomic) UIButton *bt_seting;
+@property (strong, nonatomic) UIButton *bt_reelect;
+
+@property (strong, nonatomic) ChooseButtonsPanel *cbp;
+@property (strong, nonatomic) FunctionTableBar   *ftb;
+
+@property (strong, nonatomic) UIButton *bt_sub;
+@property (strong, nonatomic) UIButton *bt_add;
 
 @end
 
