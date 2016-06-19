@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import <opencv2/opencv.hpp>
+#import <opencv2/highgui/ios.h>
+
 //自定义滑杆
 #import "ASValueTrackingSlider.h"
 #import "PopoverViewController.h"
@@ -16,6 +20,9 @@
 @interface ViewController : UIViewController<UIAlertViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ASValueTrackingSliderDataSource,UIPopoverPresentationControllerDelegate,UITableViewDelegate>
 {
     UIImage *image;
+    float   image_width;
+    float   image_height;
+    cv::Mat cvImage;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *imageView_loadImage;
 

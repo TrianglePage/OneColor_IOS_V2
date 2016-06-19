@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B58517C1D1688CA00FA339B /* algo_core.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B58517B1D1688CA00FA339B /* algo_core.mm */; };
 		F93C92061CDB5B84001BAF04 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F93C92051CDB5B84001BAF04 /* libjpeg.a */; };
 		F93C92081CDB61A8001BAF04 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93C92071CDB61A8001BAF04 /* AssetsLibrary.framework */; };
 		F96970351CDB1FDE002DB829 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96970341CDB1FDE002DB829 /* main.m */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B58517B1D1688CA00FA339B /* algo_core.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = algo_core.mm; sourceTree = "<group>"; };
 		F93C92051CDB5B84001BAF04 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		F93C92071CDB61A8001BAF04 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F96970301CDB1FDE002DB829 /* OneColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				F96970411CDB1FDE002DB829 /* LaunchScreen.storyboard */,
 				F96970441CDB1FDE002DB829 /* Info.plist */,
 				F96970331CDB1FDE002DB829 /* Supporting Files */,
+				9B58517B1D1688CA00FA339B /* algo_core.mm */,
 			);
 			path = OneColor;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				TargetAttributes = {
 					F969702F1CDB1FDE002DB829 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7EA5LEVZEZ;
 					};
 				};
 			};
@@ -443,6 +447,7 @@
 				F969703B1CDB1FDE002DB829 /* ViewController.mm in Sources */,
 				F96970A01CDB38EA002DB829 /* ASValuePopUpView.m in Sources */,
 				F96970A11CDB38EA002DB829 /* ASValueTrackingSlider.m in Sources */,
+				9B58517C1D1688CA00FA339B /* algo_core.mm in Sources */,
 				F96970B21CDB3A97002DB829 /* ChooseButtonsPanel.m in Sources */,
 				F96970381CDB1FDE002DB829 /* AppDelegate.m in Sources */,
 				F96970351CDB1FDE002DB829 /* main.m in Sources */,
@@ -559,6 +564,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +586,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hwp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -586,6 +594,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,6 +616,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hwp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

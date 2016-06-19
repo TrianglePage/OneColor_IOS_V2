@@ -27,6 +27,7 @@
     //添加子View,即添加图片页面 ---start
     CGRect r = [ UIScreen mainScreen ].bounds;
     UIView *View_AddImage = [[UIView alloc]initWithFrame:CGRectMake(r.origin.x, r.origin.y, r.size.width, r.size.height)];
+    NSLog(@"screen.w=%f, screen.h=%f", r.size.width, r.size.height);
     UIImageView *iv_add_image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"添加页面2.png"]];
     iv_add_image.frame = CGRectMake(r.origin.x, r.origin.y, r.size.width, r.size.height);
     [iv_add_image setContentScaleFactor:[[UIScreen mainScreen] scale]];
@@ -69,6 +70,9 @@
     
     //添加ImageView加载选择的图片  --start
     _imageView_loadImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+self.bt_reelect.frame.size.height+5, self.view.frame.size.width, self.view.frame.size.height-150)];
+    _imageView_loadImage.contentMode = UIViewContentModeScaleAspectFit;//等比缩放显示
+    NSLog(@"XXXXXXXXXscale=%f", self.imageView_loadImage.image.scale);
+    NSLog(@"imageView_Load_w=%f, imageView_Load_h=%f", _imageView_loadImage.frame.size.width, _imageView_loadImage.frame.size.height);
     [self.view addSubview:_imageView_loadImage];
     //添加ImageView加载选择的图片  --end
     
@@ -311,6 +315,45 @@
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
     }
     self.imageView_loadImage.image = image;
+    
+    //获取图像宽高
+    self->image_width = image.size.width;
+    self->image_height = image.size.height;
+    NSLog(@"image_w=%f, image_h=%f", self->image_width, self->image_height);
+    
+    NSLog(@"ImageView_w=%f, ImageView_h=%f", self.imageView_loadImage.frame.size.width, self.imageView_loadImage.frame.size.height);
+    
+    NSLog(@"scale=%f", self.imageView_loadImage.image.scale);
+    
+    float base_scale;
+    
+    float scale_image_xy = self->image_width/self->image_height;
+    float scale_widget_xy = self.imageView_loadImage.frame.size.width/self.imageView_loadImage.frame.size.height;
+    NSLog(@"scale_image_xy=%f, scale_widget_xy=%f", scale_image_xy, scale_widget_xy);
+    
+    if (scale_image_xy > scale_widget_xy) {
+        if(self->image_height >= self.imageView_loadImage.frame.size.height)
+        {
+            base_scale = self.imageView_loadImage.frame.size.height/self->image_height;
+        }
+        else
+        {
+            base_scale = self->image_height / self.imageView_loadImage.frame.size.height;
+        }
+    }
+    else
+    {
+        if(self->image_width >= self.imageView_loadImage.frame.size.width)
+        {
+            base_scale = self.imageView_loadImage.frame.size.width/self->image_width;
+        }
+        else
+        {
+            base_scale = self->image_width / self.imageView_loadImage.frame.size.width;
+        }
+ 
+    }
+    NSLog(@"base_scale=%f", base_scale);
     
     //隐藏或者删除添加图片的子view
     for (UIView *View in [self.view subviews])
