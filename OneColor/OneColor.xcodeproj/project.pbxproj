@@ -64,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		9B58517B1D1688CA00FA339B /* algo_core.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = algo_core.mm; sourceTree = "<group>"; };
+		9B8D3C291D1FE5B1005EDBB9 /* algo_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo_core.h; sourceTree = "<group>"; };
 		F93C92051CDB5B84001BAF04 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		F93C92071CDB61A8001BAF04 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F96970301CDB1FDE002DB829 /* OneColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +218,7 @@
 				F96970441CDB1FDE002DB829 /* Info.plist */,
 				F96970331CDB1FDE002DB829 /* Supporting Files */,
 				9B58517B1D1688CA00FA339B /* algo_core.mm */,
+				9B8D3C291D1FE5B1005EDBB9 /* algo_core.h */,
 			);
 			path = OneColor;
 			sourceTree = "<group>";

@@ -22,6 +22,9 @@
     UIImage *image;
     float   image_width;
     float   image_height;
+    float   base_scale;
+    CGRect  image_rect;
+    CGPoint image_co_point;
     cv::Mat cvImage;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *imageView_loadImage;
@@ -43,6 +46,9 @@
 
 @property (strong, nonatomic) UIButton *bt_sub;
 @property (strong, nonatomic) UIButton *bt_add;
+
+- (CGRect)getScaleImageRect;
+- (CGPoint)getImageTouchPoint: (CGPoint)tp;
 
 @end
 

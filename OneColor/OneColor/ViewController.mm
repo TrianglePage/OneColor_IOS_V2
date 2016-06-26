@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "algo_core.h"
 
 @interface ViewController ()
 
@@ -71,8 +72,8 @@
     //添加ImageView加载选择的图片  --start
     _imageView_loadImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+self.bt_reelect.frame.size.height+5, self.view.frame.size.width, self.view.frame.size.height-150)];
     _imageView_loadImage.contentMode = UIViewContentModeScaleAspectFit;//等比缩放显示
-    NSLog(@"XXXXXXXXXscale=%f", self.imageView_loadImage.image.scale);
-    NSLog(@"imageView_Load_w=%f, imageView_Load_h=%f", _imageView_loadImage.frame.size.width, _imageView_loadImage.frame.size.height);
+NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
+//    [self.imageView_loadImage setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]];
     [self.view addSubview:_imageView_loadImage];
     //添加ImageView加载选择的图片  --end
     
@@ -307,7 +308,6 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
 //当选择一张图片后进入这里, 实现代理imagePickerController
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     image = [info objectForKey:UIImagePickerControllerEditedImage];
@@ -324,37 +324,8 @@
     NSLog(@"ImageView_w=%f, ImageView_h=%f", self.imageView_loadImage.frame.size.width, self.imageView_loadImage.frame.size.height);
     
     NSLog(@"scale=%f", self.imageView_loadImage.image.scale);
-    
-    float base_scale;
-    
-    float scale_image_xy = self->image_width/self->image_height;
-    float scale_widget_xy = self.imageView_loadImage.frame.size.width/self.imageView_loadImage.frame.size.height;
-    NSLog(@"scale_image_xy=%f, scale_widget_xy=%f", scale_image_xy, scale_widget_xy);
-    
-    if (scale_image_xy > scale_widget_xy) {
-        if(self->image_height >= self.imageView_loadImage.frame.size.height)
-        {
-            base_scale = self.imageView_loadImage.frame.size.height/self->image_height;
-        }
-        else
-        {
-            base_scale = self->image_height / self.imageView_loadImage.frame.size.height;
-        }
-    }
-    else
-    {
-        if(self->image_width >= self.imageView_loadImage.frame.size.width)
-        {
-            base_scale = self.imageView_loadImage.frame.size.width/self->image_width;
-        }
-        else
-        {
-            base_scale = self->image_width / self.imageView_loadImage.frame.size.width;
-        }
- 
-    }
-    NSLog(@"base_scale=%f", base_scale);
-    
+    self->image_rect = [self getScaleImageRect];
+    NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
     //隐藏或者删除添加图片的子view
     for (UIView *View in [self.view subviews])
     {
@@ -377,6 +348,37 @@
     [_bt_add setHidden:NO];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (CGRect)getScaleImageRect {
+    float heightScale = self.imageView_loadImage.frame.size.height / self->image_height/1.0;
+    float widthScale = self.imageView_loadImage.frame.size.width / self->image_width/1.0;
+    self->base_scale = MIN(heightScale, widthScale);
+    float h = self->image_height*self->base_scale;
+    float w = self->image_width*self->base_scale;
+    
+    NSLog(@"heightScale=%f, widthScale=%f", heightScale, widthScale);
+    
+    if(widthScale < heightScale)
+    {
+        //横幅
+        float gap = (self.imageView_loadImage.frame.size.height - h)/2;
+        NSLog(@"image co: (x,y,w,h)=(%f,%f,%f,%f)", 0.0,gap,h, w);
+        return CGRectMake(0, gap, w, h);
+    }
+    else
+    {
+        float gap = (self.imageView_loadImage.frame.size.width - w)/2;
+        NSLog(@"image co: (x,y,w,h)=(%f,%f,%f,%f)", gap,0.0,h, w);
+        return CGRectMake(gap, 0, w, h);
+    }
+}
+
+-(CGPoint)getImageTouchPoint: (CGPoint)tp
+{
+    float x = (tp.x - self->image_rect.origin.x)/self->base_scale;
+    float y = (tp.y - self->image_rect.origin.y)/self->base_scale;
+    return CGPointMake(x, y);
 }
 
 //后退按钮响应
@@ -507,10 +509,16 @@
 {
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
     UITouch *touch = [allTouches anyObject];   //视图中的所有对象
-    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
-    int x = point.x;
-    int y = point.y;
-    NSLog(@"touch (x, y) is (%d, %d)", x, y);
+    CGPoint tp = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    NSLog(@"touch (x, y) is (%f, %f)", tp.x, tp.y);
+    
+    self->image_co_point = [self getImageTouchPoint:tp];
+    NSLog(@"touch point co with image:(x,y)=(%f,%f)", self->image_co_point.x, self->image_co_point.y);
+    
+    UIImage *tmp_image = [[UIImage alloc] init];
+    ImageProcesser(self.imageView_loadImage.image, tmp_image,self->image_width, self->image_height,self->image_co_point, 1, 10, 1, 1);
+    self.imageView_loadImage.image = tmp_image;
+
 }
 
 
