@@ -15,5 +15,5 @@
 #import <opencv2/highgui/ios.h>
 
 
-int ImageProcesser(UIImage* src, UIImage* out,int w, int h, CGPoint touchpoint, int touchPointsCount, int level, int bgColor, int bgBlur);
+int ImageProcesser(UIImage* src, UIImage** out, int w, int h, CGPoint touchpoint, int touchPointsCount, int level, int bgColor, int bgBlur);
 #endif /* algo_core_h */
