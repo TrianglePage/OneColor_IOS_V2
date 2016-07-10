@@ -42,7 +42,7 @@
      *  在此事件中写入连接代码。第四个参数则为配置本地社交平台时触发，根据返回的平台类型来配置平台信息。
      *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
      */
-    [ShareSDK registerApp:@"iosv1101"
+    [ShareSDK registerApp:@"121698e59927a"
      
           activePlatforms:@[
                             @(SSDKPlatformTypeSinaWeibo),
@@ -51,8 +51,9 @@
                             @(SSDKPlatformTypeCopy),
                             @(SSDKPlatformTypeWechat),
                             @(SSDKPlatformTypeQQ),
-                            @(SSDKPlatformTypeRenren),
-                            @(SSDKPlatformTypeGooglePlus)]
+                            //@(SSDKPlatformTypeRenren),
+                            //@(SSDKPlatformTypeGooglePlus)
+                            ]
                  onImport:^(SSDKPlatformType platformType)
      {
          switch (platformType)
@@ -80,14 +81,14 @@
          {
              case SSDKPlatformTypeSinaWeibo:
                  //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
-                                           appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+                 [appInfo SSDKSetupSinaWeiboByAppKey:@"3346998974"
+                                           appSecret:@"3f74c23deaec8aedd646ff5624b76dcc"
                                          redirectUri:@"http://www.sharesdk.cn"
                                             authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                                       appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                 [appInfo SSDKSetupWeChatByAppId:@"wxe288bcf07e6c4a2d"
+                                       appSecret:@"60e6c8a996352aee118cc0aaf29189c1"];
                  break;
              case SSDKPlatformTypeQQ:
                  [appInfo SSDKSetupQQByAppId:@"100371282"

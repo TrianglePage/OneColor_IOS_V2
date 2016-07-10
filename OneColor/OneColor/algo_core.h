@@ -15,5 +15,15 @@
 #import <opencv2/highgui/ios.h>
 
 
-int ImageProcesser(UIImage* src, UIImage* out,int w, int h, CGPoint touchpoint, int touchPointsCount, int level, int bgColor, int bgBlur);
+typedef enum
+{
+    gray =0,
+    GREEN=1,
+    BLUE =2,
+    YELLOW=3,
+    PURPLE=4,
+}BGColor;
+
+
+int ImageProcesser(UIImage* src, UIImage** out,int w, int h, CGPoint touchpoint, int touchPointsCount, int level, int bgColor, int bgBlur);
 #endif /* algo_core_h */
