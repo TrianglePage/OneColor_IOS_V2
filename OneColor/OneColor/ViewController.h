@@ -25,7 +25,6 @@
     float   base_scale;
     CGRect  image_rect;
     CGPoint image_co_point;
-    cv::Mat cvImage;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *imageView_loadImage;
 

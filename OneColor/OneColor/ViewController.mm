@@ -72,7 +72,7 @@
     //添加ImageView加载选择的图片  --start
     _imageView_loadImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+self.bt_reelect.frame.size.height+5, self.view.frame.size.width, self.view.frame.size.height-150)];
     _imageView_loadImage.contentMode = UIViewContentModeScaleAspectFit;//等比缩放显示
-NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
+NSLog(@"isImage?=%d", self.imageView_loadImage.image != nil);
 //    [self.imageView_loadImage setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]];
     [self.view addSubview:_imageView_loadImage];
     //添加ImageView加载选择的图片  --end
@@ -325,7 +325,7 @@ NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
     
     NSLog(@"scale=%f", self.imageView_loadImage.image.scale);
     self->image_rect = [self getScaleImageRect];
-    NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
+    NSLog(@"isImage?=%d", self.imageView_loadImage.image != nil);
     //隐藏或者删除添加图片的子view
     for (UIView *View in [self.view subviews])
     {
@@ -534,6 +534,7 @@ NSLog(@"isImage?=%d", self.imageView_loadImage.image == nil);
     self->image_co_point = [self getImageTouchPoint:tp];
     NSLog(@"touch point co with image:(x,y)=(%f,%f)", self->image_co_point.x, self->image_co_point.y);
     
+
     UIImage *tmp_image = [[UIImage alloc] init];
     ImageProcesser(self.imageView_loadImage.image, &tmp_image,self->image_width, self->image_height,self->image_co_point, 1, 10, 1, 1);
     self.imageView_loadImage.image = tmp_image;
